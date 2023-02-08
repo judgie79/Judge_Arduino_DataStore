@@ -4,6 +4,7 @@
 #if defined(ESP32)
 #include "Arduino.h"
 #include <Preferences.h>
+#include "DataStore.h"
 
 class PreferencesDataStore : public DataStore {
 private:

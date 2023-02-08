@@ -1,8 +1,7 @@
 #ifndef __EEPROMDATA_STORE_H
 #define __EEPROMDATA_STORE_H
 
-#if defined(ESP32)
-#else
+#if !defined(ESP32)
 #include "Arduino.h"
 #include <DebugLog.h>
 #include <EEPROM.h>

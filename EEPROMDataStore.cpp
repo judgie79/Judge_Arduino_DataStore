@@ -1,7 +1,7 @@
 #include "EEPROMDataStore.h"
 #include "DataStore.h"
+#if !defined(ESP32)
 #include <EEPROM.h>
-
 EEPROMDataStore::EEPROMDataStore() :
     DataStore()
 {
@@ -32,3 +32,4 @@ void EEPROMDataStore::write(int address, byte value)
         return EEPROM.write(address, value);
     }
 }
+#endif
