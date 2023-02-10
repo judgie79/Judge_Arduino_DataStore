@@ -1,29 +1,69 @@
 #include "PreferencesDataStore.h"
 
 #if defined(ESP32)
-PreferencesDataStore::PreferencesDataStore() :
-    DataStore()
+PreferencesDataStore::PreferencesDataStore(const char *name) : DataStore()
 {
-    
+    this->name = name;
 }
 
-void PreferencesDataStore::begin() 
+void PreferencesDataStore::begin(bool readonly)
 {
-    
+    preferences.begin(name, readonly);
 }
 
-bool PreferencesDataStore::canAccess(uint16_t address)
+void PreferencesDataStore::end()
 {
-    return true;
+    preferences.end();
 }
 
-byte PreferencesDataStore::read(int address)
+bool PreferencesDataStore::readBool(const char *key)
 {
-    return 0;
+    return preferences.getBool(key);
+}
+int PreferencesDataStore::readInt(const char *key)
+{
+    return preferences.getInt(key);
 }
 
-void PreferencesDataStore::write(int address, byte value)
+uint32_t PreferencesDataStore::readUInt(const char *key)
 {
-
+    return preferences.getUInt(key);
 }
+
+uint16_t PreferencesDataStore::readUShort(const char *key)
+{
+    return preferences.getUShort(key);
+}
+
+int16_t PreferencesDataStore::readShort(const char *key)
+{
+    return preferences.getShort(key);
+}
+
+String PreferencesDataStore::readString(const char *key)
+{
+    return preferences.getString(key);
+}
+char PreferencesDataStore::readChar(const char *key)
+{
+    return preferences.getChar(key);
+}
+
+void PreferencesDataStore::write(const char *key, bool value)
+{
+    preferences.putBool(key, value);
+}
+void PreferencesDataStore::write(const char *key, int value)
+{
+    preferences.putInt(key, value);
+}
+void PreferencesDataStore::write(const char *key, String value)
+{
+    preferences.putString(key, value);
+}
+void PreferencesDataStore::write(const char *key, char value)
+{
+    preferences.putChar(key, value);
+}
+
 #endif

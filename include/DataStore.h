@@ -12,11 +12,18 @@ public:
     
   }
 
-	virtual void begin();
+	virtual void begin(bool readonly = true);
+	virtual void end();
 
-	virtual byte read(int address);
+	virtual bool readBool(const char *  key);
+	virtual int readInt(const char *  key);
+	virtual String readString(const char *  key);
+	virtual char readChar(const char *  key);
 
-	virtual void write(int address, byte value);
+	virtual void write(const char *  key, bool value);
+	virtual void write(const char *  key, int value);
+	virtual void write(const char *  key, String value);
+	virtual void write(const char *  key, char value);
 };
 
 #endif
