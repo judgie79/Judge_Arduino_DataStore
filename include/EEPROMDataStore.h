@@ -28,13 +28,13 @@ public:
 	String readString(const char *  key);
 	char readChar(const char *  key);
 
-	void write(const char *  key, bool value);
-	void write(const char *  key, int value);
-	void write(const char *  key, String value);
-	void write(const char *  key, char value);
-	void write(const char *  key, unsigned int value);
-	void write(const char *  key, short value);
-	void write(const char *  key, unsigned short value);
+	void writeBool(const char *  key, bool value);
+	void writeInt(const char *  key, int value);
+	void writeString(const char *  key, String value);
+	void writeChar(const char *  key, char value);
+	void writeUInt(const char *  key, unsigned int value);
+	void writeShort(const char *  key, short value);
+	void writeUShort(const char *  key, unsigned short value);
 };
 
 #endif

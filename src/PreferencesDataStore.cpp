@@ -35,6 +35,7 @@ uint16_t PreferencesDataStore::readUShort(const char *key)
     return preferences.getUShort(key);
 }
 
+
 int16_t PreferencesDataStore::readShort(const char *key)
 {
     return preferences.getShort(key);
@@ -49,21 +50,34 @@ char PreferencesDataStore::readChar(const char *key)
     return preferences.getChar(key);
 }
 
-void PreferencesDataStore::write(const char *key, bool value)
+void PreferencesDataStore::writeBool(const char *key, bool value)
 {
     preferences.putBool(key, value);
 }
-void PreferencesDataStore::write(const char *key, int value)
+void PreferencesDataStore::writeInt(const char *key, int value)
 {
     preferences.putInt(key, value);
 }
-void PreferencesDataStore::write(const char *key, String value)
+void PreferencesDataStore::writeString(const char *key, String value)
 {
     preferences.putString(key, value);
 }
-void PreferencesDataStore::write(const char *key, char value)
+void PreferencesDataStore::writeChar(const char *key, char value)
 {
     preferences.putChar(key, value);
+}
+
+void PreferencesDataStore::writeUShort(const char *key, unsigned short value)
+{
+    preferences.putUShort(key, value);
+}
+void PreferencesDataStore::writeShort(const char *key, short value)
+{
+    preferences.putShort(key, value);
+}
+void PreferencesDataStore::writeUInt(const char *key, unsigned int value)
+{
+    preferences.putUInt(key, value);
 }
 
 #endif

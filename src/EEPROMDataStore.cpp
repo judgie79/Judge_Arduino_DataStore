@@ -87,7 +87,7 @@ char EEPROMDataStore::readChar(const char *key)
     return -1;
 }
 
-void EEPROMDataStore::write(const char *key, bool value)
+void EEPROMDataStore::writeBool(const char *key, bool value)
 {
     if (readonly)
         return;
@@ -98,7 +98,7 @@ void EEPROMDataStore::write(const char *key, bool value)
     }
 }
 
-void EEPROMDataStore::write(const char *key, int value)
+void EEPROMDataStore::writeInt(const char *key, int value)
 {
     if (readonly)
         return;
@@ -110,7 +110,7 @@ void EEPROMDataStore::write(const char *key, int value)
     }
 }
 
-void EEPROMDataStore::write(const char *key, unsigned short value)
+void EEPROMDataStore::writeUShort(const char *key, unsigned short value)
 {
     if (readonly)
         return;
@@ -120,7 +120,7 @@ void EEPROMDataStore::write(const char *key, unsigned short value)
         EEPROM.write(storeMap(key), value);
     }
 }
-void EEPROMDataStore::write(const char *key, short value)
+void EEPROMDataStore::writeShort(const char *key, short value)
 {
     if (readonly)
         return;
@@ -131,7 +131,7 @@ void EEPROMDataStore::write(const char *key, short value)
     }
 }
 
-void EEPROMDataStore::write(const char *key, unsigned int value)
+void EEPROMDataStore::writeUInt(const char *key, unsigned int value)
 {
     if (readonly)
         return;
@@ -143,7 +143,7 @@ void EEPROMDataStore::write(const char *key, unsigned int value)
     }
 }
 
-void EEPROMDataStore::write(const char *key, String value)
+void EEPROMDataStore::writeString(const char *key, String value)
 {
     if (readonly)
         return;
@@ -159,7 +159,7 @@ void EEPROMDataStore::write(const char *key, String value)
     }
 }
 
-void EEPROMDataStore::write(const char *key, char value)
+void EEPROMDataStore::writeChar(const char *key, char value)
 {
     if (readonly)
         return;
