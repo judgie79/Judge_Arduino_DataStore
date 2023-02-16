@@ -1,6 +1,6 @@
-#include "PreferencesDataStore.h"
 
 #if defined(ESP32)
+#include "PreferencesDataStore.h"
 PreferencesDataStore::PreferencesDataStore(const char *name) : DataStore()
 {
     this->name = name;

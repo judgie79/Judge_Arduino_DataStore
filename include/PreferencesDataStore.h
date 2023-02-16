@@ -2,7 +2,7 @@
 #define __PREFERENCESDATA_STORE_H
 
 #if defined(ESP32)
-#include "Arduino.h"
+#include <Arduino.h>
 #include <Preferences.h>
 #include "DataStore.h"
 
